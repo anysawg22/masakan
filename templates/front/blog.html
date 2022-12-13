@@ -1,0 +1,69 @@
+{% extends 'front/baseSide.html' %} {% load static %} {% block konten %}
+<section class="recipe-section spad">
+  <div class="container">
+    <div class="row justify-content-center">
+      {% for a in pager %}
+      <div class="col-lg-4 col-sm-6" style="height: 500px">
+        <div class="recipe-item" style="height: 500px">
+          <a href="{% url 'detailblog' a.id %}"
+            ><img
+              src="{{a.picture}}"
+              style="
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+                max-height: 300px;
+                height: 200px;
+              "
+              alt=""
+          /></a>
+          <div class="ri-text">
+            <div class="cat-name">{{a.penulis}}</div>
+            <a href="{% url 'detailblog' a.id %}">
+              <h4>{{a.judul}}</h4>
+            </a>
+            <div
+              style="
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+              "
+            >
+              <p>{{a.konten |safe}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="recipe-pagination">
+          {% if pager.has_previous %}
+
+          <a class="" href="?page=1">&laquo First</a>
+
+          <a class="ml-2 mr-2" href="?page={{pager.previous_page_number}}"
+            >previous</a
+          >
+
+          {% endif %} {% for i in nums %}
+
+          <a class="" href="?page={{forloop.counter}}">{{forloop.counter}}</a>
+
+          {% endfor %} {% if pager.has_next %}
+
+          <a class="" href="?page={{pager.next_page_number}}">next</a>
+
+          <a class="ml-2" href="?page={{pager.paginator.num_pages}}"
+            >&raquo Last</a
+          >
+
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock konten %}

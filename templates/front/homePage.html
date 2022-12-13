@@ -1,0 +1,130 @@
+{% extends 'front/baseFront.html' %} {% load static %} {% block konten %}
+<section class="page-top-recipe">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 order-lg-2">
+        <div class="pt-recipe-item large-item">
+          <div class="pt-recipe-img set-bg" data-setbg="{{data1.strMealThumb}}">
+            <i
+              ><h2 class="font-weight-bold text-white">
+                {{data1.strCategory}}
+              </h2></i
+            >
+          </div>
+          <div class="pt-recipe-text">
+            <a href="{% url 'detailresep' data1.idMeal %}">
+              <h3>{{data1.strMeal}}</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 order-lg-1">
+        <div class="pt-recipe-item">
+          <div class="pt-recipe-img set-bg" data-setbg="{{data2.strMealThumb}}">
+            <i
+              ><h2 class="font-weight-bold text-white">
+                {{data2.strCategory}}
+              </h2></i
+            >
+          </div>
+          <div class="pt-recipe-text">
+            <a href="{% url 'detailresep' data2.idMeal %}">
+              <h3>{{data2.strMeal}}</h3>
+            </a>
+          </div>
+        </div>
+        <div class="pt-recipe-item">
+          <div class="pt-recipe-img set-bg" data-setbg="{{data3.strMealThumb}}">
+            <i
+              ><h2 class="font-weight-bold text-white">
+                {{data3.strCategory}}
+              </h2></i
+            >
+          </div>
+          <div class="pt-recipe-text">
+            <a href="{% url 'detailresep' data3.idMeal %}">
+              <h3>{{data3.strMeal}}</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 order-lg-3">
+        <div class="pt-recipe-item">
+          <div class="pt-recipe-img set-bg" data-setbg="{{data4.strMealThumb}}">
+            <i
+              ><h2 class="font-weight-bold text-white">
+                {{data4.strCategory}}
+              </h2></i
+            >
+          </div>
+          <div class="pt-recipe-text">
+            <a href="{% url 'detailresep' data4.idMeal %}">
+              <h3>{{data4.strMeal}}</h3>
+            </a>
+          </div>
+        </div>
+        <div class="pt-recipe-item">
+          <div class="pt-recipe-img set-bg" data-setbg="{{data5.strMealThumb}}">
+            <i
+              ><h2 class="font-weight-bold text-white">
+                {{data5.strCategory}}
+              </h2></i
+            >
+          </div>
+          <div class="pt-recipe-text">
+            <a href="{% url 'detailresep' data5.idMeal %}">
+              <h3>{{data5.strMeal}}</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Page Top Recipe Section End -->
+
+<!-- Top Recipe Section Begin -->
+<section class="top-recipe spad">
+  <div class="section-title">
+    <h5>Some Recently Artikel This Week</h5>
+  </div>
+  <div class="container po-relative">
+    <div class="row">
+      {% for a in pager %}
+      <div class="col-lg-4 col-sm-6" style="height: 500px">
+        <div class="recipe-item" style="height: 500px">
+          <a href="{% url 'detailblog' a.id %}"
+            ><img
+              src="{{a.picture}}"
+              style="
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+                max-height: 300px;
+                height: 200px;
+              "
+              alt=""
+          /></a>
+          <div class="ri-text">
+            <div class="cat-name">{{a.penulis}}</div>
+            <a href="{% url 'detailblog' a.id %}">
+              <h4>{{a.judul}}</h4>
+            </a>
+            <div
+              style="
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+              "
+            >
+              <p>{{a.konten |safe}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock konten %}

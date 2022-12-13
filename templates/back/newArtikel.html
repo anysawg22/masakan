@@ -1,0 +1,66 @@
+{% extends 'back/baseBack.html' %} {% load static %} {% block konten %}
+
+<div class="container-fluid page-body-wrapper">
+  <div class="main-panel">
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Tambah Artikel Baru</h4>
+              <p class="card-description">
+                tambah artikel baru dengan mengisi form di bawah
+              </p>
+              <form
+                class="forms-sample"
+                method="post"
+                enctype="multipart/form-data"
+              >
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="exampleInputName1">Judul</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputName1"
+                    placeholder="Judul"
+                    name="judul"
+                    value="{{value.judul}}"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="exampleTextarea1">Konten</label>
+                  <textarea
+                    class="form-control"
+                    id="exampleTextarea1"
+                    rows="4"
+                    placeholder="Konten"
+                    name="konten"
+                  >
+{{value.konten}}</textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label>File upload</label>
+                  <div class="input-group col-xs-12">
+                    <input
+                      type="file"
+                      class="form-control file-upload-info"
+                      placeholder="Upload Image"
+                      name="gambar"
+                    />
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary me-2">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock konten %}

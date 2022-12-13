@@ -1,0 +1,134 @@
+{% extends 'front/baseSide.html' %} {% load static %} {% block konten %}
+
+<section class="single-page-recipe spad">
+  <div class="recipe-top">
+    <div class="container-fluid text-center">
+      <div class="recipe-title">
+        <span>~ {{data.strArea}}/ {{data.strCategory}}</span>
+        <h2>{{data.strMeal}}</h2>
+      </div>
+      <img src="{{data.strMealThumb}}" class="text-center" alt="" />
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="ingredients-item">
+          <div class="ingredient-list">
+            <div class="list-item">
+              <h5>Ingredients</h5>
+              <div class="salad-list">
+                <ul>
+                  {% if data.strIngredient1 != "" %}
+                  <li>{{data.strIngredient1}}</li>
+                  {% endif %} {% if data.strIngredient2 != "" %}
+                  <li>{{data.strIngredient2}}</li>
+                  {% endif %} {% if data.strIngredient3 != "" %}
+                  <li>{{data.strIngredient3}}</li>
+                  {% endif %} {% if data.strIngredient4 != "" %}
+                  <li>{{data.strIngredient4}}</li>
+                  {% endif %} {% if data.strIngredient5 != "" %}
+                  <li>{{data.strIngredient5}}</li>
+                  {% endif %} {% if data.strIngredient6 != "" %}
+                  <li>{{data.strIngredient6}}</li>
+                  {% endif %} {% if data.strIngredient7 != "" %}
+                  <li>{{data.strIngredient7}}</li>
+                  {% endif %} {% if data.strIngredient8 != "" %}
+                  <li>{{data.strIngredient8}}</li>
+                  {% endif %} {% if data.strIngredient9 != "" %}
+                  <li>{{data.strIngredient9}}</li>
+                  {% endif %} {% if data.strIngredient10 != "" %}
+                  <li>{{data.strIngredient10}}</li>
+                  {% endif %} {% if data.strIngredient11 != "" %}
+                  <li>{{data.strIngredient11}}</li>
+                  {% endif %} {% if data.strIngredient12 != ""%}
+                  <li>{{data.strIngredient12}}</li>
+                  {% endif %} {% if data.strIngredient13 != "" %}
+                  <li>{{data.strIngredient13}}</li>
+                  {% endif %} {% if data.strIngredient14 != "" %}
+                  <li>{{data.strIngredient14}}</li>
+                  {% endif %} {% if data.strIngredient15 != "" %}
+                  <li>{{data.strIngredient15}}</li>
+                  {% endif %} {% if data.strIngredient16 != "" %}
+                  <li>{{data.strIngredient16}}</li>
+                  {% endif %} {% if data.strIngredient17 != "" %}
+                  <li>{{data.strIngredient17}}</li>
+                  {% endif %} {% if data.strIngredient18 != "" %}
+                  <li>{{data.strIngredient18}}</li>
+                  {% endif %} {% if data.strIngredient19 != "" %}
+                  <li>{{data.strIngredient19}}</li>
+                  {% endif %} {% if data.strIngredient20 != "" %}
+                  <li>{{data.strIngredient20}}</li>
+                  {% endif %}
+                </ul>
+              </div>
+              <div class="dressing-list">
+                <h6>Measure</h6>
+                <ul>
+                  {% if data.strMeasure1 != " " %}
+                  <li>{{data.strMeasure1}}</li>
+                  {% endif %} {% if data.strMeasure2 != " " %}
+                  <li>{{data.strMeasure2}}</li>
+                  {% endif %} {% if data.strMeasure3 != " " %}
+                  <li>{{data.strMeasure3}}</li>
+                  {% endif %} {% if data.strMeasure4 != " " %}
+                  <li>{{data.strMeasure4}}</li>
+                  {% endif %} {% if data.strMeasure5 != " " %}
+                  <li>{{data.strMeasure5}}</li>
+                  {% endif %} {% if data.strMeasure6 != " " %}
+                  <li>{{data.strMeasure6}}</li>
+                  {% endif %} {% if data.strMeasure7 != " " %}
+                  <li>{{data.strMeasure7}}</li>
+                  {% endif %} {% if data.strMeasure8 != " " %}
+                  <li>{{data.strMeasure8}}</li>
+                  {% endif %} {% if data.strMeasure9 != " " %}
+                  <li>{{data.strMeasure9}}</li>
+                  {% endif %} {% if data.strMeasure10 != " " %}
+                  <li>{{data.strMeasure10}}</li>
+                  {% endif %} {% if data.strMeasure11 != " " %}
+                  <li>{{data.strMeasure11}}</li>
+                  {% endif %} {% if data.strMeasure12 != " " %}
+                  <li>{{data.strMeasure12}}</li>
+                  {% endif %} {% if data.strMeasure13 != " " %}
+                  <li>{{data.strMeasure13}}</li>
+                  {% endif %} {% if data.strMeasure14 != " " %}
+                  <li>{{data.strMeasure14}}</li>
+                  {% endif %} {% if data.strMeasure15 != " " %}
+                  <li>{{data.strMeasure15}}</li>
+                  {% endif %} {% if data.strMeasure16 != " " %}
+                  <li>{{data.strMeasure16}}</li>
+                  {% endif %} {% if data.strMeasure17 != " " %}
+                  <li>{{data.strMeasure17}}</li>
+                  {% endif %} {% if data.strMeasure18 != " " %}
+                  <li>{{data.strMeasure18}}</li>
+                  {% endif %} {% if data.strMeasure19 != " " %}
+                  <li>{{data.strMeasure19}}</li>
+                  {% endif %} {% if data.strMeasure20 != " " %}
+                  <li>{{data.strMeasure20}}</li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="recipe-right">
+          <div class="instruction-list">
+            <h3>Instructions</h3>
+            <ul>
+              <li>{{data.strInstructions | linebreaksbr}}</li>
+              <li class="myLink">
+                <a href="{{data.strYoutube}}" target="_blank"
+                  ><h4>Click Here To See Video Tutorial!</h4></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock konten %}

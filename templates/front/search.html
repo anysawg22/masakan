@@ -1,0 +1,33 @@
+{% extends 'front/baseSide.html' %} {% load static %} {% block konten %}
+
+<section class="recipe-section spad">
+  <div class="container">
+    <div class="row justify-content-center">
+      {% for d in data %}
+      <div class="col-lg-4 col-sm-6">
+        <div class="recipe-item">
+          <a href="#"><img src="{{d.strMealThumb}}" alt="" /></a>
+          <div class="ri-text">
+            <div class="cat-name">{{d.strArea}}</div>
+            <a href="{% url 'detailresep' d.idMeal %}">
+              <h4>{{d.strMeal}}</h4>
+            </a>
+            <div
+              style="
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+              "
+            >
+              <p>{{d.strInstructions}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock konten %}
