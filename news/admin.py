@@ -5,3 +5,4 @@ class AdminNews(admin.ModelAdmin):
     list_display = ["penulis","judul", "konten", "date", "picture"]
 
 admin.site.register(News, AdminNews)
+admin.site.register(Masakan)

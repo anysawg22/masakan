@@ -15,6 +15,7 @@ urlpatterns = [
     path("detailresep/<int:id>", detailresep, name="detailresep"),
     path("login/", loginPage, name="login"),
     path("detailblog/<int:id>", detailBlog, name="detailblog"),
+    path("sinkron_random/", sinkron_masakan_random, name="sinkron_random"),
     # 
     path("dashboard/", include('news.urls'))
 ]
