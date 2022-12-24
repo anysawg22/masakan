@@ -80,20 +80,22 @@ def editNews(request, id):
     
     if request.method == "POST":
         
-        myfile = request.FILES.get("gambar")
-        fs = FileSystemStorage()
-        filename = fs.save(myfile.name, myfile)
-        url = fs.url(filename)
+        myfile = request.FILES.get("gambar", False)
         
         judul = request.POST.get('judul')
         konten = request.POST.get('konten')
-        gambar = url
         penulis = request.user
+        
+        if(myfile):
+            fs = FileSystemStorage()
+            filename = fs.save(myfile.name, myfile)
+            url = fs.url(filename)
+            gambar = url
+            get_artikel.picture = gambar
         
         get_artikel.penulis = penulis
         get_artikel.judul = judul
         get_artikel.konten = konten
-        get_artikel.picture = gambar
         get_artikel.save()
         
         
